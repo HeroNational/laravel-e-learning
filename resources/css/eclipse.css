@@ -1,0 +1,21 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "availability-calendar.css";
+@import "bootstrap.css";
+@import "font-awesome.min.css";
+@import "hexagons.min.css";
+@import "ion.rangeSlider.css";
+@import "ion.rangeSlider.skinFlat.css";
+@import "jquerysctipttop.css";
+@import "linearicons.css";
+@import "magnific-popup.css";
+@import "main.css";
+@import "nice-select.css";
+@import "owl.carousel.css";
+@import "returnOnTop.css";
+@import "particles_def.css";
+@import "Material-Icon/material-icons.css";
+
+@import "themify-icons.css";

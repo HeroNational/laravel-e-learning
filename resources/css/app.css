@@ -1,0 +1,6 @@
+/*Tailwind Css*/
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "themify-icons.css";
+@import "style.css";

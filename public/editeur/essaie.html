@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="lightgray/skin.min.css">
+    <link rel="stylesheet" href="lightgray/content.min.css">
+    <script src="jquery.js"></script>
+    <style>
+        #mceu_58{
+            display:none!important;
+        }
+    </style>
+</head>
+
+<body>
+    <daniel id="document">
+    </daniel>
+
+
+
+    <script src="tinymce.min.js"></script>
+    <script src="fr_FR.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'daniel#document',
+            height: 290,
+            theme: 'modern',
+            plugins: [
+                'addlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount0 visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools codesample'
+            ],
+            toolbar1: 'undo redo | cut copy paste | styleselect fontselect fontsizeselect forecolor',
+            toolbar2: 'backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink',
+            toolbar3: 'anchor codesample image emoticons media | preview',
+            statusbar: true,
+            resizehandle: true
+        });
+    </script>
+</body>
+</html>
