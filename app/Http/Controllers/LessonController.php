@@ -63,7 +63,7 @@ class LessonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showLesson($name,$id)
+    public function showLesson($id)
     {
 
 //        if(isset(Auth::user()->enseignant->id)){

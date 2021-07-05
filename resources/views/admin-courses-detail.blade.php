@@ -27,19 +27,19 @@
                                         <div class="content">
                                             <ul class="course-list">
                                                 @forelse ($course->leçons as $lesson)
-                                                    
+
                                                 <li class="justify-content-between d-flex">
                                                     <p>{{$lesson->title}}</p>
                                                     @if (isset(Auth::user()->enseignant))
                                                     <div>
-                                                        <span class="text-uppercase justify-content-between d-flex" ><a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="btn ti-pencil">&nbsp;Update</a><a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Delete</a></span>
+                                                        <span class="text-uppercase justify-content-between d-flex" ><a href="{{route('lesson',["id"=>$lesson])}}" class="btn ti-eye">&nbsp;Read</a><a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="btn ti-pencil">&nbsp;Update</a><a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Delete</a></span>
                                                     </div>
                                                     @else
-                                                        <a href="">Read</a>
+                                                        <a href="{{route('lesson',["id"=>$lesson])}}">Read</a>
                                                     @endif
-                                               
+
                                                 @empty
-                                                    
+
                                                 @endforelse
                                                 </li>
                                             </ul>

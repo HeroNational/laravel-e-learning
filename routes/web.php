@@ -22,10 +22,6 @@ Route::get('/qr', [QrController::class,'qr_create'])->middleware(["auth"])->name
 Route::post('/qr', function () {
     return view('qr');
 })->name('qr-generate');
-Route::get('/admin-my-course', [CourController::class,"adminmycourse"])->middleware(['auth'])->name('admin-course');
-
-Route::get('/admin-my-course/{id}', [CourController::class,"showSingle"])->middleware(['auth'])->name('admin-courses-detail');
-
 require __DIR__.'./my-routes.php';
 //require __DIR__.'./admin.php';
 require __DIR__.'./user_dashboard.php';

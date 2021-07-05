@@ -8,10 +8,6 @@ use App\Http\Controllers\LessonController;
     return view('all-courses',["courses"=>Cour::all()]);
 })->name('all-courses');
  */
-Route::get('/courses/{name}/', function () {
-    return view('courses');
-})->middleware(['auth'])->name('course-detail');
-
 
 Route::get('/my-courses', function () {
     return view("my-courses");
@@ -34,4 +30,3 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('course-detail');
  */
 
-Route::get('/courses/{name}/{id}', [LessonController::class,"showLesson"])->middleware(['auth'])->name('course-detail');

@@ -11,7 +11,7 @@ use App\Http\Controllers\LessonController;
 /* Lessons */
 Route::get('/edit-lesson',[LessonController::class,"editlesson"])->middleware(['auth'])->name('edit-lesson');
 Route::post('/edit-lesson', [LessonController::class,"submitlesson"])->middleware(['auth'])->name('edit-lesson');
-Route::get('/courses/{name}/{id}', [LessonController::class,"showLesson"])->middleware(['auth'])->name('lesson');
+Route::get('/courses/read/{id}', [LessonController::class,"showLesson"])->middleware(['auth'])->name('lesson');
 
 /*courses*/
 Route::get('/edit-course', [CourController::class,"editcourse"])->middleware(['auth'])->name('edit-course');
@@ -23,6 +23,9 @@ Route::get('/courses', function () {
 })->name('courses');
 
 
+Route::get('/admin-my-course', [CourController::class,"adminmycourse"])->middleware(['auth'])->name('admin-course');
+
+Route::get('/admin-my-course/{id}', [CourController::class,"showSingle"])->middleware(['auth'])->name('admin-courses-detail');
 
 /* Route::get('/admin-my-course', [CourController::class,"adminmycourse"])->middleware(['auth'])->name('admin-course');
 
