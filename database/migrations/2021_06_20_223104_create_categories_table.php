@@ -22,6 +22,15 @@ class CreateCategoriesTable extends Migration
         Categorie::create([
             "nom"=>"Uncategorized"
         ]);
+        Categorie::create([
+            "nom"=>"Science"
+        ]);
+        Categorie::create([
+            "nom"=>"Data science"
+        ]);
+        Categorie::create([
+            "nom"=>"Computer science"
+        ]);
     }
 
     /**

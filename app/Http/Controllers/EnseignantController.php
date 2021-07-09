@@ -32,7 +32,11 @@ class EnseignantController extends Controller
             "user_id"=>Auth::user()->id,
             "formation"=>json_encode(["0"]),
         ]);
-        $enseignant=Enseignant::where("user_id",Auth::user()->id)->limit(1)->first();
+        $user=User::where("id",Auth::user()->id);
+        $user->role="enseignant";
+        $user->update(["role"=>"teacher"]);
+
+//        $enseignant=Enseignant::where("user_id",Auth::user()->id)->limit(1)->first();
         //$enseignant=Enseignant::All();
         //$enseignant->save();
         //dd($enseignant);

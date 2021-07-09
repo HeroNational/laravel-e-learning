@@ -43,6 +43,7 @@ class RegisteredUserController extends Controller
             "country"=>"required",
             "gender"=>"required",
             //"role"=>"required",
+            "phone"=>"required",
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             "avatar"=>"image",
         ]);
@@ -75,6 +76,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'pseudo' => $request->pseudo,
             'genre' => $request->gender,
+            'telephone' => $request->phone,
             "biographie"=>$request->biographie,
             //'role' => $request->role,
             'remember_token'=> str_shuffle(Str::random(5).$request->name.now()),

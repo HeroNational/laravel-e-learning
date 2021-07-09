@@ -146,7 +146,7 @@
           <div class="owl-carousel video-carousel">
             <div class="single-video">
               <div class="video-part">
-                <img class="img-fluid" src="{{Auth::user()->avatar?Storage::url(Auth::user()->avatar):Storage::url("courses/default0.png")}}" alt="">
+                <img class="img-fluid" src="{{isset(Auth::user()->avatar)?Storage::url(Auth::user()->avatar):Storage::url("courses/default0.png")}}" alt="">
                 <div class="overlay"></div>
                 <a class="popup-youtube play-btn" href="https://www.youtube.com/watch?v=VufDd-QL1c0">
                   <img class="play-icon" src="img/play-btn.png" alt="">

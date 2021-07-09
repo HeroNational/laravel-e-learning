@@ -2,7 +2,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Course detail') }} <a href="#" class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Enroll the course</a>
+            {{ __('Course detail') }}
+            @if(isset(Auth::user()->enseignant->id))
+                @if ((Auth::user()->enseignant->id != $course->enseignant_id))
+                    <a href="{{route('enroll',['id'=>$course->id])}}" class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Enroll the course</a>
+                @endif
+            @else
+                <a href="{{route('enroll',['id'=>$course->id])}}" class="float-right shadow bg-green-00 hover:bg-green-600 hover:text-white btn text-uppercase enroll">Enroll the course</a>
+            @endif
         </h2>
     </x-slot>
 
@@ -30,18 +37,20 @@
 
                                                 <li class="justify-content-between d-flex">
                                                     <p>{{$lesson->title}}</p>
-                                                    @if (isset(Auth::user()->enseignant))
-                                                    <div>
-                                                        <span class="text-uppercase justify-content-between d-flex" ><a href="{{route('lesson',["id"=>$lesson])}}" class="btn ti-eye">&nbsp;Read</a><a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="btn ti-pencil">&nbsp;Update</a><a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Delete</a></span>
-                                                    </div>
-                                                    @else
-                                                        <a href="{{route('lesson',["id"=>$lesson])}}">Read</a>
-                                                    @endif
-
-                                                @empty
-
-                                                @endforelse
+                                                        <div>
+                                                            <span class="text-uppercase justify-content-between d-flex" >
+                                                                <a href="{{route('lesson',["id"=>$lesson])}}" class="btn ti-eye">&nbsp;Read</a>
+                                                            @if(isset(Auth::user()->enseignant->id))
+                                                                @if (Auth::user()->enseignant->id == $course->enseignant_id)
+                                                                <a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="btn ti-pencil">&nbsp;Update</a><a href="{{route("edit-lesson",["id"=>$lesson->id])}}" class="ml-3 btn hover:bg-red-600 ti-trash">&nbsp;Delete</a>
+                                                                @endif
+                                                            @endif
+                                                            </span>
+                                                        </div>
                                                 </li>
+                                                @empty
+                                                    <div class="w-full p-3 mb-3 text-white bg-red-600 rounded">No lessons for this lesson yet.</div>
+                                                @endforelse
                                             </ul>
                                         </div>
                                     </div>

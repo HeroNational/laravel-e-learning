@@ -53,6 +53,11 @@
                             class="w-full px-4 py-2 text-base placeholder-gray-500 placeholder-opacity-50 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500"
                         >
                         <input
+                            type="Text" placeholder="Phone number"
+                            name="phone" :value="old('phone')" required autofocus
+                            class="w-full px-4 py-2 text-base placeholder-gray-500 placeholder-opacity-50 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500"
+                        >
+                        <input
                             type="email" placeholder="email.."
                             name="email" :value="old('email')" required autofocus
                             class="w-full px-4 py-2 text-base placeholder-gray-500 placeholder-opacity-50 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500"

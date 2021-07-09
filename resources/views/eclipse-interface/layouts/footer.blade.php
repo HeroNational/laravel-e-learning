@@ -75,7 +75,7 @@
   <script src="{{ url("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js")}}" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
     crossorigin="anonymous"></script>
   <script src="{{asset("js/vendor/bootstrap.min.js")}}"></script>
-  <script type="text/javascript" src="{{ url("https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA")}}""></script>
+  <script type="text/javascript" src="{{ url("https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA")}}"></script>
   <script src="{{asset("js/jquery.ajaxchimp.min.js")}}"></script>
   <script src="{{asset("js/jquery.magnific-popup.min.js")}}"></script>
   <script src="{{asset("js/parallax.min.js")}}"></script>
@@ -89,6 +89,8 @@
   <script src="{{asset("js/particles.min.js")}}"></script>
   <script src="{{asset("js/particles_def.js")}}"></script>
   <script src="{{asset("js/main.js")}}"></script>
+  <link rel="stylesheet" href="{{asset('css/print.css')}}">
+  <script src="{{asset('js/print.js')}}"></script>
 </body>
 
 </html>

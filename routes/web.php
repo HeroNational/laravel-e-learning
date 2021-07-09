@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Cour;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QrController;
-use App\Models\Cour;
+use App\Http\Controllers\EnseignantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,18 @@ use App\Models\Cour;
 Route::get('/', function () {
     return view('eclipse-interface.index',["cours"=>Cour::All()]);
 })->name("home");
+
+
+Route::get('/profile', function () {
+    return view('profile');
+})->middleware(['auth'])->name('profile');
+
+Route::post('/profile',[EnseignantController::class,"create"])->middleware(['auth'])->name('profile');
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/qr', [QrController::class,'qr_create'])->middleware(["auth"])->name('qr-generate');
 Route::post('/qr', function () {

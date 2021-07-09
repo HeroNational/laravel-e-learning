@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('pays')->nullable();
             $table->enum('genre',['Female','male','Transgender']);
             $table->string('ville_residence')->nullable();
-            $table->string('telephone',20)->nullable();
+            $table->string('telephone',20);
             $table->text('biographie')->nullable();
             $table->boolean('newsletter')->default("0");
             $table->string('password');

@@ -55,7 +55,7 @@ class LessonController extends Controller
         if(isset(Auth::user()->enseignant->id)){
             return view("admin-publish-lesson",["cours"=>Cour::where('enseignant_id',Auth::user()->enseignant->id)->get() ]);
         }else{
-            return view("dashboard");
+            return redirect(route("courses"));
         }
     }
       /**
